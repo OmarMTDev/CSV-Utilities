@@ -65,7 +65,7 @@ function generateNormalizedCSVFiles (chunkSize, csvName) {
           chunkArray.push(chunk);
           part += 1;
           const csvWriter = createCsvWriter({
-            path: `results/${csvName}-${part}.csv`,
+            path: `results/${(csvName.split(' ').join('-'))}-PART-${part}.csv`,
             header: headerMap
           });
           csvWriter.writeRecords(chunk);
